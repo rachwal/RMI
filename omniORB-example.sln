@@ -1,0 +1,72 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "abstraction", "abstraction", "{2E226BD2-1E8E-4BD6-A841-A1699314AAF2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "omniORB implementation", "omniORB implementation", "{AACBCA93-73DC-44FC-87E7-087710324812}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{5FDC2DA7-8FA2-43C4-9486-178238A2C372}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "message", "abstraction\message\message.vcxproj", "{FD2E3B83-FC6E-4D23-A22E-59CEE8F3F0C5}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "omni_orb_idl", "omni_orb_implementation\omni_orb_idl\omni_orb_idl.vcxproj", "{263FDB5E-9513-4A37-A72A-C2F2CB0EB1F2}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "omni_orb_message", "omni_orb_implementation\omni_orb_message\omni_orb_message.vcxproj", "{F40A3256-24AF-4D1A-876F-A7E3CBF1F079}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "colocated_client_and_implementation_tests", "tests\colocated_client_and_implementation\colocated_client_and_implementation_tests.vcxproj", "{0DD8403F-83B5-44CD-A764-1E37B2A17FD4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "idl", "idl", "{F7706135-79EC-48CA-B3E4-BE07CFB0D285}"
+	ProjectSection(SolutionItems) = preProject
+		omni_orb_implementation\idl\message.idl = omni_orb_implementation\idl\message.idl
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "message_service", "abstraction\message_service\message_service.vcxproj", "{D4BC11AE-A184-4ED3-AB5F-0705F11672F5}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "omni_orb_message_service", "omni_orb_implementation\omni_orb_message_service\omni_orb_message_service.vcxproj", "{5E39D67C-606F-4A07-97F1-976ACD343EF2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FD2E3B83-FC6E-4D23-A22E-59CEE8F3F0C5}.Debug|x64.ActiveCfg = Debug|x64
+		{FD2E3B83-FC6E-4D23-A22E-59CEE8F3F0C5}.Debug|x64.Build.0 = Debug|x64
+		{FD2E3B83-FC6E-4D23-A22E-59CEE8F3F0C5}.Release|x64.ActiveCfg = Release|x64
+		{FD2E3B83-FC6E-4D23-A22E-59CEE8F3F0C5}.Release|x64.Build.0 = Release|x64
+		{263FDB5E-9513-4A37-A72A-C2F2CB0EB1F2}.Debug|x64.ActiveCfg = Debug|x64
+		{263FDB5E-9513-4A37-A72A-C2F2CB0EB1F2}.Debug|x64.Build.0 = Debug|x64
+		{263FDB5E-9513-4A37-A72A-C2F2CB0EB1F2}.Release|x64.ActiveCfg = Release|x64
+		{263FDB5E-9513-4A37-A72A-C2F2CB0EB1F2}.Release|x64.Build.0 = Release|x64
+		{F40A3256-24AF-4D1A-876F-A7E3CBF1F079}.Debug|x64.ActiveCfg = Debug|x64
+		{F40A3256-24AF-4D1A-876F-A7E3CBF1F079}.Debug|x64.Build.0 = Debug|x64
+		{F40A3256-24AF-4D1A-876F-A7E3CBF1F079}.Release|x64.ActiveCfg = Release|x64
+		{F40A3256-24AF-4D1A-876F-A7E3CBF1F079}.Release|x64.Build.0 = Release|x64
+		{0DD8403F-83B5-44CD-A764-1E37B2A17FD4}.Debug|x64.ActiveCfg = Debug|x64
+		{0DD8403F-83B5-44CD-A764-1E37B2A17FD4}.Debug|x64.Build.0 = Debug|x64
+		{0DD8403F-83B5-44CD-A764-1E37B2A17FD4}.Release|x64.ActiveCfg = Release|x64
+		{0DD8403F-83B5-44CD-A764-1E37B2A17FD4}.Release|x64.Build.0 = Release|x64
+		{D4BC11AE-A184-4ED3-AB5F-0705F11672F5}.Debug|x64.ActiveCfg = Debug|x64
+		{D4BC11AE-A184-4ED3-AB5F-0705F11672F5}.Debug|x64.Build.0 = Debug|x64
+		{D4BC11AE-A184-4ED3-AB5F-0705F11672F5}.Release|x64.ActiveCfg = Release|x64
+		{D4BC11AE-A184-4ED3-AB5F-0705F11672F5}.Release|x64.Build.0 = Release|x64
+		{5E39D67C-606F-4A07-97F1-976ACD343EF2}.Debug|x64.ActiveCfg = Debug|x64
+		{5E39D67C-606F-4A07-97F1-976ACD343EF2}.Debug|x64.Build.0 = Debug|x64
+		{5E39D67C-606F-4A07-97F1-976ACD343EF2}.Release|x64.ActiveCfg = Release|x64
+		{5E39D67C-606F-4A07-97F1-976ACD343EF2}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{FD2E3B83-FC6E-4D23-A22E-59CEE8F3F0C5} = {2E226BD2-1E8E-4BD6-A841-A1699314AAF2}
+		{263FDB5E-9513-4A37-A72A-C2F2CB0EB1F2} = {AACBCA93-73DC-44FC-87E7-087710324812}
+		{F40A3256-24AF-4D1A-876F-A7E3CBF1F079} = {AACBCA93-73DC-44FC-87E7-087710324812}
+		{0DD8403F-83B5-44CD-A764-1E37B2A17FD4} = {5FDC2DA7-8FA2-43C4-9486-178238A2C372}
+		{F7706135-79EC-48CA-B3E4-BE07CFB0D285} = {AACBCA93-73DC-44FC-87E7-087710324812}
+		{D4BC11AE-A184-4ED3-AB5F-0705F11672F5} = {2E226BD2-1E8E-4BD6-A841-A1699314AAF2}
+		{5E39D67C-606F-4A07-97F1-976ACD343EF2} = {AACBCA93-73DC-44FC-87E7-087710324812}
+	EndGlobalSection
+EndGlobal

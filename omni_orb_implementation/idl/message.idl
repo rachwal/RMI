@@ -1,0 +1,10 @@
+#ifndef __MESSAGE_IDL_IDL__
+#define __MESSAGE_IDL_IDL__
+
+interface MessageIdl {
+  string getContent();
+  void setContent(in string text);
+};
+
+#endif  // __MESSAGE_IDL_IDL__
+
