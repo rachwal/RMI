@@ -11,6 +11,7 @@ OmniOrbMessageService::OmniOrbMessageService(CORBA::ORB_var* orb) : orb_(orb) { 
 
 OmniOrbLocalMessage *OmniOrbMessageService::Create(std::string id) const
 {
+	OmniOrbLocalMessage* message = nullptr;
 	try
 	{
 		CORBA::Object_var context_ptr = root_context_->resolve(context_name_);
@@ -21,7 +22,7 @@ OmniOrbLocalMessage *OmniOrbMessageService::Create(std::string id) const
 		object_name[0].id = id.c_str();
 		object_name[0].kind = "Object";
 
-		auto message = new OmniOrbLocalMessage(id, orb_);
+		message = new OmniOrbLocalMessage(id, orb_);
 		auto message_ref = message->getRef();
 
 		context->rebind(object_name, message_ref);
@@ -30,6 +31,7 @@ OmniOrbLocalMessage *OmniOrbMessageService::Create(std::string id) const
 	}
 	catch (CORBA::SystemException&)
 	{
+		delete message;
 		return nullptr;
 	}
 }
@@ -44,16 +46,19 @@ OmniOrbRemoteMessage *OmniOrbMessageService::Retrieve(std::string id) const
 	object_name[0].id = id.c_str();
 	object_name[0].kind = "Object";
 
+	OmniOrbRemoteMessage* message = nullptr;
+
 	try
 	{
 		auto message_ptr = context->resolve(object_name);
 		auto message_idl = MessageIdl::_narrow(message_ptr);
-		auto message = new OmniOrbRemoteMessage(id, orb_);
+		message = new OmniOrbRemoteMessage(id, orb_);
 		message->setRef(message_idl);
 		return message;
 	}
 	catch (CORBA::SystemException&)
 	{
+		delete message;
 		return nullptr;
 	}
 }
@@ -73,7 +78,7 @@ void OmniOrbMessageService::SetContext(std::string id, std::string kind)
 	{
 		root_context_->bind_new_context(context_name_);
 	}
-	catch (CosNaming::NamingContext::AlreadyBound&) { }
+	catch (CosNaming::NamingContext::AlreadyBound&) {}
 }
 
 bool OmniOrbMessageService::Activate()

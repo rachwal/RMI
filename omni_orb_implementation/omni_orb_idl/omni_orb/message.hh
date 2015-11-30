@@ -143,9 +143,12 @@ class _objref_MessageIdl :
 };
 
 class _pof_MessageIdl : public _OMNI_NS(proxyObjectFactory)
+
 {
 	public:
-	inline _pof_MessageIdl() : _OMNI_NS(proxyObjectFactory)(MessageIdl::_PD_repoId) { }
+	inline _pof_MessageIdl() : _OMNI_NS(proxyObjectFactory)
+
+	(MessageIdl::_PD_repoId){}
 
 	virtual ~_pof_MessageIdl();
 
