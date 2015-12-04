@@ -63,7 +63,7 @@ OmniOrbRemoteMessage *OmniOrbMessageService::Retrieve(std::string id) const
 	}
 }
 
-void OmniOrbMessageService::Update(std::string id, message::Message* message) const { }
+void OmniOrbMessageService::Update(std::string id, rmi::message::Message* message) const { }
 
 void OmniOrbMessageService::Destroy(std::string id) const { }
 

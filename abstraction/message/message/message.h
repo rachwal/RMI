@@ -6,7 +6,7 @@
 
 #include <string>
 
-namespace omniorb_example
+namespace rmi
 {
 namespace message
 {

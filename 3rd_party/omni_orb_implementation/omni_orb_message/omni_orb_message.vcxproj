@@ -52,10 +52,8 @@
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
-  </ImportGroup>
-  <ImportGroup Label="Shared">
-    <Import Project="..\..\packages\omniorb_rt_aist.redist.1.0.0\build\native\omniorb_rt_aist.redist.targets" Condition="Exists('..\..\packages\omniorb_rt_aist.redist.1.0.0\build\native\omniorb_rt_aist.redist.targets')" />
-    <Import Project="..\..\packages\omniorb_rt_aist.1.0.0\build\native\omniorb_rt_aist.targets" Condition="Exists('..\..\packages\omniorb_rt_aist.1.0.0\build\native\omniorb_rt_aist.targets')" />
+    <Import Project="..\..\..\packages\omniorb_rt_aist.redist.1.0.0\build\native\omniorb_rt_aist.redist.targets" Condition="Exists('..\..\..\packages\omniorb_rt_aist.redist.1.0.0\build\native\omniorb_rt_aist.redist.targets')" />
+    <Import Project="..\..\..\packages\omniorb_rt_aist.1.0.0\build\native\omniorb_rt_aist.targets" Condition="Exists('..\..\..\packages\omniorb_rt_aist.1.0.0\build\native\omniorb_rt_aist.targets')" />
   </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
@@ -76,7 +74,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>..\omni_orb_idl;..\..\abstraction\message;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\omni_orb_idl;..\..\..\abstraction\message;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
@@ -88,7 +86,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>..\omni_orb_idl;..\..\abstraction\message;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\omni_orb_idl;..\..\..\abstraction\message;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
@@ -102,7 +100,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>..\omni_orb_idl;..\..\abstraction\message;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\omni_orb_idl;..\..\..\abstraction\message;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
@@ -118,7 +116,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>..\omni_orb_idl;..\..\abstraction\message;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\omni_orb_idl;..\..\..\abstraction\message;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
@@ -136,11 +134,6 @@
     <ClCompile Include="omni_orb\omni_orb_remote_message.cc" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\omni_orb_idl\omni_orb_idl.vcxproj">
-      <Project>{263fdb5e-9513-4a37-a72a-c2f2cb0eb1f2}</Project>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
@@ -148,7 +141,7 @@
     <PropertyGroup>
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
-    <Error Condition="!Exists('..\..\packages\omniorb_rt_aist.redist.1.0.0\build\native\omniorb_rt_aist.redist.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\omniorb_rt_aist.redist.1.0.0\build\native\omniorb_rt_aist.redist.targets'))" />
-    <Error Condition="!Exists('..\..\packages\omniorb_rt_aist.1.0.0\build\native\omniorb_rt_aist.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\omniorb_rt_aist.1.0.0\build\native\omniorb_rt_aist.targets'))" />
+    <Error Condition="!Exists('..\..\..\packages\omniorb_rt_aist.redist.1.0.0\build\native\omniorb_rt_aist.redist.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\..\packages\omniorb_rt_aist.redist.1.0.0\build\native\omniorb_rt_aist.redist.targets'))" />
+    <Error Condition="!Exists('..\..\..\packages\omniorb_rt_aist.1.0.0\build\native\omniorb_rt_aist.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\..\packages\omniorb_rt_aist.1.0.0\build\native\omniorb_rt_aist.targets'))" />
   </Target>
 </Project>

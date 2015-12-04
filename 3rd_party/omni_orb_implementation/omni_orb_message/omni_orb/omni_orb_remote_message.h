@@ -12,7 +12,7 @@ namespace omniorb_example
 {
 namespace omniorb
 {
-class OmniOrbRemoteMessage :public message::Message
+class OmniOrbRemoteMessage :public rmi::message::Message
 {
 	public:
 	OmniOrbRemoteMessage(std::string id, CORBA::ORB_var* orb);

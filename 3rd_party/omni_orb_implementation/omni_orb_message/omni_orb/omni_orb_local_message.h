@@ -12,7 +12,7 @@ namespace omniorb_example
 {
 namespace omniorb
 {
-class OmniOrbLocalMessage :public message::Message, public POA_MessageIdl, public PortableServer::RefCountServantBase
+class OmniOrbLocalMessage :public rmi::message::Message, public POA_MessageIdl, public PortableServer::RefCountServantBase
 {
 	public:
 	OmniOrbLocalMessage(std::string id, CORBA::ORB_var* orb);

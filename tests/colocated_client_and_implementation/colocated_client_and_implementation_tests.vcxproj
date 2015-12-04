@@ -95,7 +95,7 @@
       </PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>$(VCInstallDir)UnitTest\include;..\..\omni_orb_implementation\omni_orb_message_service;..\..\omni_orb_implementation\omni_orb_message;..\..\omni_orb_implementation\omni_orb_idl;..\..\abstraction\message_service;..\..\abstraction\message</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(VCInstallDir)UnitTest\include;..\..\platform\advertisement;..\..\3rd_party\zeroc_ice_implementation\zeroc_ice;..\..\3rd_party\zeroc_ice_implementation\zeroc_ice_message;..\..\3rd_party\zeroc_ice_implementation\zeroc_ice_message_service;..\..\3rd_party\omni_orb_implementation\omni_orb_message_service;..\..\3rd_party\omni_orb_implementation\omni_orb_message;..\..\3rd_party\omni_orb_implementation\omni_orb_idl;..\..\abstraction\message_service;..\..\abstraction\message</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_DEBUG;</PreprocessorDefinitions>
       <UseFullPaths>true</UseFullPaths>
       <PrecompiledHeaderFile />
@@ -114,7 +114,7 @@
       </PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>$(VCInstallDir)UnitTest\include;..\..\omni_orb_implementation\omni_orb_message_service;..\..\omni_orb_implementation\omni_orb_message;..\..\omni_orb_implementation\omni_orb_idl;..\..\abstraction\message_service;..\..\abstraction\message</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(VCInstallDir)UnitTest\include;..\..\platform\advertisement;..\..\3rd_party\zeroc_ice_implementation\zeroc_ice;..\..\3rd_party\zeroc_ice_implementation\zeroc_ice_message;..\..\3rd_party\zeroc_ice_implementation\zeroc_ice_message_service;..\..\3rd_party\omni_orb_implementation\omni_orb_message_service;..\..\3rd_party\omni_orb_implementation\omni_orb_message;..\..\3rd_party\omni_orb_implementation\omni_orb_idl;..\..\abstraction\message_service;..\..\abstraction\message</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_DEBUG;</PreprocessorDefinitions>
       <UseFullPaths>true</UseFullPaths>
       <PrecompiledHeaderFile />
@@ -135,7 +135,7 @@
       <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
-      <AdditionalIncludeDirectories>$(VCInstallDir)UnitTest\include;..\..\omni_orb_implementation\omni_orb_message_service;..\..\omni_orb_implementation\omni_orb_message;..\..\omni_orb_implementation\omni_orb_idl;..\..\abstraction\message_service;..\..\abstraction\message</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(VCInstallDir)UnitTest\include;..\..\platform\advertisement;..\..\3rd_party\zeroc_ice_implementation\zeroc_ice;..\..\3rd_party\zeroc_ice_implementation\zeroc_ice_message;..\..\3rd_party\zeroc_ice_implementation\zeroc_ice_message_service;..\..\3rd_party\omni_orb_implementation\omni_orb_message_service;..\..\3rd_party\omni_orb_implementation\omni_orb_message;..\..\3rd_party\omni_orb_implementation\omni_orb_idl;..\..\abstraction\message_service;..\..\abstraction\message</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_NDEBUG;</PreprocessorDefinitions>
       <UseFullPaths>true</UseFullPaths>
       <PrecompiledHeaderFile />
@@ -158,7 +158,7 @@
       <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
-      <AdditionalIncludeDirectories>$(VCInstallDir)UnitTest\include;..\..\omni_orb_implementation\omni_orb_message_service;..\..\omni_orb_implementation\omni_orb_message;..\..\omni_orb_implementation\omni_orb_idl;..\..\abstraction\message_service;..\..\abstraction\message</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(VCInstallDir)UnitTest\include;..\..\platform\advertisement;..\..\3rd_party\zeroc_ice_implementation\zeroc_ice;..\..\3rd_party\zeroc_ice_implementation\zeroc_ice_message;..\..\3rd_party\zeroc_ice_implementation\zeroc_ice_message_service;..\..\3rd_party\omni_orb_implementation\omni_orb_message_service;..\..\3rd_party\omni_orb_implementation\omni_orb_message;..\..\3rd_party\omni_orb_implementation\omni_orb_idl;..\..\abstraction\message_service;..\..\abstraction\message</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_NDEBUG;</PreprocessorDefinitions>
       <UseFullPaths>true</UseFullPaths>
       <PrecompiledHeaderFile />
@@ -177,23 +177,37 @@
     <ClCompile Include="colocated_client_and_implementation_tests.cc" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\omni_orb_implementation\omni_orb_idl\omni_orb_idl.vcxproj">
-      <Project>{263fdb5e-9513-4a37-a72a-c2f2cb0eb1f2}</Project>
-    </ProjectReference>
-    <ProjectReference Include="..\..\omni_orb_implementation\omni_orb_message\omni_orb_message.vcxproj">
-      <Project>{f40a3256-24af-4d1a-876f-a7e3cbf1f079}</Project>
-    </ProjectReference>
-    <ProjectReference Include="..\..\omni_orb_implementation\omni_orb_message_service\omni_orb_message_service.vcxproj">
-      <Project>{5e39d67c-606f-4a07-97f1-976acd343ef2}</Project>
-    </ProjectReference>
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
+    <ProjectReference Include="..\..\3rd_party\omni_orb_implementation\omni_orb_idl\omni_orb_idl.vcxproj">
+      <Project>{263fdb5e-9513-4a37-a72a-c2f2cb0eb1f2}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\3rd_party\omni_orb_implementation\omni_orb_message\omni_orb_message.vcxproj">
+      <Project>{f40a3256-24af-4d1a-876f-a7e3cbf1f079}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\3rd_party\omni_orb_implementation\omni_orb_message_service\omni_orb_message_service.vcxproj">
+      <Project>{5e39d67c-606f-4a07-97f1-976acd343ef2}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\3rd_party\zeroc_ice_implementation\zeroc_ice\zeroc_ice.vcxproj">
+      <Project>{be693e20-cc01-4beb-bb99-d48b573a4d77}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\3rd_party\zeroc_ice_implementation\zeroc_ice_message\zeroc_ice_message.vcxproj">
+      <Project>{aedca563-580c-46e5-b3a3-cc2fae70ca6d}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\3rd_party\zeroc_ice_implementation\zeroc_ice_message_service\zeroc_ice_message_service.vcxproj">
+      <Project>{11cfe48d-f6ed-43ed-a502-ea8e481095d1}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\platform\advertisement\advertisement.vcxproj">
+      <Project>{74714d99-f47b-4cbc-8733-ce6cc8a194a4}</Project>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
     <Import Project="..\..\packages\omniorb_rt_aist.redist.1.0.0\build\native\omniorb_rt_aist.redist.targets" Condition="Exists('..\..\packages\omniorb_rt_aist.redist.1.0.0\build\native\omniorb_rt_aist.redist.targets')" />
     <Import Project="..\..\packages\omniorb_rt_aist.1.0.0\build\native\omniorb_rt_aist.targets" Condition="Exists('..\..\packages\omniorb_rt_aist.1.0.0\build\native\omniorb_rt_aist.targets')" />
+    <Import Project="..\..\packages\zeroc_ice_core_aist.redist.1.0.2\build\native\zeroc_ice_core_aist.redist.targets" Condition="Exists('..\..\packages\zeroc_ice_core_aist.redist.1.0.2\build\native\zeroc_ice_core_aist.redist.targets')" />
+    <Import Project="..\..\packages\zeroc_ice_core_aist.1.0.2\build\native\zeroc_ice_core_aist.targets" Condition="Exists('..\..\packages\zeroc_ice_core_aist.1.0.2\build\native\zeroc_ice_core_aist.targets')" />
   </ImportGroup>
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
@@ -201,5 +215,7 @@
     </PropertyGroup>
     <Error Condition="!Exists('..\..\packages\omniorb_rt_aist.redist.1.0.0\build\native\omniorb_rt_aist.redist.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\omniorb_rt_aist.redist.1.0.0\build\native\omniorb_rt_aist.redist.targets'))" />
     <Error Condition="!Exists('..\..\packages\omniorb_rt_aist.1.0.0\build\native\omniorb_rt_aist.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\omniorb_rt_aist.1.0.0\build\native\omniorb_rt_aist.targets'))" />
+    <Error Condition="!Exists('..\..\packages\zeroc_ice_core_aist.redist.1.0.2\build\native\zeroc_ice_core_aist.redist.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\zeroc_ice_core_aist.redist.1.0.2\build\native\zeroc_ice_core_aist.redist.targets'))" />
+    <Error Condition="!Exists('..\..\packages\zeroc_ice_core_aist.1.0.2\build\native\zeroc_ice_core_aist.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\zeroc_ice_core_aist.1.0.2\build\native\zeroc_ice_core_aist.targets'))" />
   </Target>
 </Project>

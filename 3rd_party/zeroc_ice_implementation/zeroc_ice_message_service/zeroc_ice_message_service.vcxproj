@@ -18,9 +18,18 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="zeroc_ice\zeroc_ice_message_service.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="zeroc_ice\zeroc_ice_message_service.cc" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{263FDB5E-9513-4A37-A72A-C2F2CB0EB1F2}</ProjectGuid>
-    <RootNamespace>omni_orb_idl</RootNamespace>
+    <ProjectGuid>{11CFE48D-F6ED-43ED-A502-EA8E481095D1}</ProjectGuid>
+    <RootNamespace>zeroc_ice_message_service</RootNamespace>
     <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -54,8 +63,6 @@
   <ImportGroup Label="ExtensionSettings">
   </ImportGroup>
   <ImportGroup Label="Shared">
-    <Import Project="..\..\packages\omniorb_rt_aist.redist.1.0.0\build\native\omniorb_rt_aist.redist.targets" Condition="Exists('..\..\packages\omniorb_rt_aist.redist.1.0.0\build\native\omniorb_rt_aist.redist.targets')" />
-    <Import Project="..\..\packages\omniorb_rt_aist.1.0.0\build\native\omniorb_rt_aist.targets" Condition="Exists('..\..\packages\omniorb_rt_aist.1.0.0\build\native\omniorb_rt_aist.targets')" />
   </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
@@ -76,7 +83,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\zeroc_ice;..\zeroc_ice_message;..\..\..\abstraction\message;..\..\..\abstraction\message_service</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -87,7 +94,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\zeroc_ice;..\zeroc_ice_message;..\..\..\abstraction\message;..\..\..\abstraction\message_service</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -100,7 +107,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\zeroc_ice;..\zeroc_ice_message;..\..\..\abstraction\message;..\..\..\abstraction\message_service</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -115,7 +122,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\zeroc_ice;..\zeroc_ice_message;..\..\..\abstraction\message;..\..\..\abstraction\message_service</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -123,21 +130,16 @@
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClInclude Include="omni_orb\message.hh" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="omni_orb\messageSK.cc" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+    <Import Project="..\..\..\packages\zeroc_ice_core_aist.redist.1.0.2\build\native\zeroc_ice_core_aist.redist.targets" Condition="Exists('..\..\..\packages\zeroc_ice_core_aist.redist.1.0.2\build\native\zeroc_ice_core_aist.redist.targets')" />
+    <Import Project="..\..\..\packages\zeroc_ice_core_aist.1.0.2\build\native\zeroc_ice_core_aist.targets" Condition="Exists('..\..\..\packages\zeroc_ice_core_aist.1.0.2\build\native\zeroc_ice_core_aist.targets')" />
+  </ImportGroup>
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
-    <Error Condition="!Exists('..\..\packages\omniorb_rt_aist.redist.1.0.0\build\native\omniorb_rt_aist.redist.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\omniorb_rt_aist.redist.1.0.0\build\native\omniorb_rt_aist.redist.targets'))" />
-    <Error Condition="!Exists('..\..\packages\omniorb_rt_aist.1.0.0\build\native\omniorb_rt_aist.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\omniorb_rt_aist.1.0.0\build\native\omniorb_rt_aist.targets'))" />
+    <Error Condition="!Exists('..\..\..\packages\zeroc_ice_core_aist.redist.1.0.2\build\native\zeroc_ice_core_aist.redist.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\..\packages\zeroc_ice_core_aist.redist.1.0.2\build\native\zeroc_ice_core_aist.redist.targets'))" />
+    <Error Condition="!Exists('..\..\..\packages\zeroc_ice_core_aist.1.0.2\build\native\zeroc_ice_core_aist.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\..\packages\zeroc_ice_core_aist.1.0.2\build\native\zeroc_ice_core_aist.targets'))" />
   </Target>
 </Project>

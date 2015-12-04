@@ -6,7 +6,7 @@
 
 #include "../../message/message/message.h"
 
-namespace omniorb_example
+namespace rmi
 {
 namespace message
 {
