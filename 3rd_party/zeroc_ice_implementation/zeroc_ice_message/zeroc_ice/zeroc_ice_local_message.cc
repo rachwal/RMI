@@ -5,34 +5,34 @@
 
 namespace zeroc_example
 {
-	namespace zeroc
-	{
-		ZerocIceLocalMessage::ZerocIceLocalMessage(std::string id) : id_(id) {}
+namespace zeroc
+{
+ZerocIceLocalMessage::ZerocIceLocalMessage(std::string id) : id_(id) {}
 
-		std::string ZerocIceLocalMessage::content() const
-		{
-			return content_;
-		}
+std::string ZerocIceLocalMessage::content() const
+{
+	return content_;
+}
 
-		void ZerocIceLocalMessage::content(const std::string& text)
-		{
-			content_ = text;
-		}
+void ZerocIceLocalMessage::content(const std::string& text)
+{
+	content_ = text;
+}
 
-		std::string ZerocIceLocalMessage::id() const
-		{
-			return id_;
-		}
+std::string ZerocIceLocalMessage::id() const
+{
+	return id_;
+}
 
-		std::string ZerocIceLocalMessage::getContent(const ::Ice::Current&)
-		{
-			return content();
-		}
+std::string ZerocIceLocalMessage::getContent(const ::Ice::Current&)
+{
+	return content();
+}
 
-		void ZerocIceLocalMessage::setContent(const std::string& text, const ::Ice::Current&)
-		{
-			content(text);
-		}
-	}
+void ZerocIceLocalMessage::setContent(const std::string& text, const ::Ice::Current&)
+{
+	content(text);
+}
+}
 }
 

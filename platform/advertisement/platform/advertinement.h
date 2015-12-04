@@ -8,20 +8,20 @@
 
 namespace rmi
 {
-	namespace platform
-	{
-		class Advertisement
-		{
-		public:
-			Advertisement(message::Message* brand, message::Message* product);
+namespace platform
+{
+class Advertisement
+{
+	public:
+	Advertisement(message::Message* brand, message::Message* product);
 
-			std::string Broadcast() const;
+	std::string Broadcast() const;
 
-		private:
-			message::Message* brand_message_;
-			message::Message* product_message_;
-		};
-	}
+	private:
+	message::Message* brand_message_;
+	message::Message* product_message_;
+};
+}
 }
 
 #endif

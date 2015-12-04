@@ -7,15 +7,16 @@
 
 namespace rmi
 {
-	namespace platform
-	{
-		Advertisement::Advertisement(message::Message* brand, message::Message* product) : brand_message_(brand), product_message_(product) {}
+namespace platform
+{
+Advertisement::Advertisement(message::Message* brand, message::Message* product) : brand_message_(brand), product_message_(product) {}
 
-		std::string Advertisement::Broadcast() const
-		{
-			std::ostringstream broadcast;
-			broadcast << "<" << brand_message_->content() << "|" << product_message_->content() << ">";
-			return broadcast.str();
-		}
-	}
+std::string Advertisement::Broadcast() const
+{
+	std::ostringstream broadcast;
+	broadcast << "<" << brand_message_->content() << "|" << product_message_->content() << ">";
+	return broadcast.str();
 }
+}
+}
+

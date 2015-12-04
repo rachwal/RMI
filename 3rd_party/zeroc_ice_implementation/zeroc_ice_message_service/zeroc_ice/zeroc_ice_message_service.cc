@@ -8,33 +8,34 @@
 
 namespace zeroc_example
 {
-	namespace zeroc
-	{
-		ZerocIceMessageService::ZerocIceMessageService(Ice::ObjectAdapterPtr* adapter) :adapter_(adapter) {}
+namespace zeroc
+{
+ZerocIceMessageService::ZerocIceMessageService(Ice::ObjectAdapterPtr* adapter) : adapter_(adapter) {}
 
-		rmi::message::Message* ZerocIceMessageService::Create(std::string id) const
-		{
-			zerocexample::MessageIcePtr local_message_ptr = new ZerocIceLocalMessage(id);
-			
-			(*adapter_)->add(local_message_ptr, (*adapter_)->getCommunicator()->stringToIdentity(id));
-		
-			auto message = Retrieve(id);
-			return message;
-		}
+rmi::message::Message *ZerocIceMessageService::Create(std::string id) const
+{
+	zerocexample::MessageIcePtr local_message_ptr = new ZerocIceLocalMessage(id);
 
-		rmi::message::Message* ZerocIceMessageService::Retrieve(std::string id) const
-		{
-			std::ostringstream proxy;
-			proxy << id << ":tcp -p 10000:udp -p 10001";
-			(*adapter_)->getCommunicator()->getProperties()->setProperty("MessageIce.Proxy", proxy.str());
+	(*adapter_)->add(local_message_ptr, (*adapter_)->getCommunicator()->stringToIdentity(id));
 
-			auto handle = zerocexample::MessageIcePrx::checkedCast((*adapter_)->getCommunicator()->propertyToProxy("MessageIce.Proxy")->ice_twoway()->ice_secure(false));
-			auto message = new ZerocIceRemoteMessage(id, handle);
-			return message;
-		}
-
-		void ZerocIceMessageService::Update(std::string id, rmi::message::Message* message) const {}
-
-		void ZerocIceMessageService::Destroy(std::string id) const {}
-	}
+	auto message = Retrieve(id);
+	return message;
 }
+
+rmi::message::Message *ZerocIceMessageService::Retrieve(std::string id) const
+{
+	std::ostringstream proxy;
+	proxy << id << ":tcp -p 10000:udp -p 10001";
+	(*adapter_)->getCommunicator()->getProperties()->setProperty("MessageIce.Proxy", proxy.str());
+
+	auto handle = zerocexample::MessageIcePrx::checkedCast((*adapter_)->getCommunicator()->propertyToProxy("MessageIce.Proxy")->ice_twoway()->ice_secure(false));
+	auto message = new ZerocIceRemoteMessage(id, handle);
+	return message;
+}
+
+void ZerocIceMessageService::Update(std::string id, rmi::message::Message* message) const {}
+
+void ZerocIceMessageService::Destroy(std::string id) const {}
+}
+}
+

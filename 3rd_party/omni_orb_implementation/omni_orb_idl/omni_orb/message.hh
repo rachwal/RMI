@@ -144,6 +144,7 @@ class _objref_MessageIdl :
 
 class _pof_MessageIdl : public _OMNI_NS(proxyObjectFactory)
 
+
 {
 	public:
 	inline _pof_MessageIdl() : _OMNI_NS(proxyObjectFactory)

@@ -12,25 +12,25 @@
 
 namespace zeroc_example
 {
-	namespace zeroc
-	{
-		class ZerocIceRemoteMessage :public rmi::message::Message
-		{
-		public:
-			explicit ZerocIceRemoteMessage(std::string id, IceInternal::ProxyHandle<IceProxy::zerocexample::MessageIce> proxy_handle);
+namespace zeroc
+{
+class ZerocIceRemoteMessage :public rmi::message::Message
+{
+	public:
+	explicit ZerocIceRemoteMessage(std::string id, IceInternal::ProxyHandle<IceProxy::zerocexample::MessageIce> proxy_handle);
 
-			virtual std::string content() const override;
-			virtual void content(const std::string& text) override;
+	virtual std::string content() const override;
+	virtual void content(const std::string& text) override;
 
-			std::string id() const override;
+	std::string id() const override;
 
-		private:
-			std::string content_;
-			std::string id_;
+	private:
+	std::string content_;
+	std::string id_;
 
-			IceInternal::ProxyHandle<IceProxy::zerocexample::MessageIce> proxy_handle_;
-		};
-	}
+	IceInternal::ProxyHandle<IceProxy::zerocexample::MessageIce> proxy_handle_;
+};
+}
 }
 
 #endif

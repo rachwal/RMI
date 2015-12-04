@@ -5,26 +5,25 @@
 
 namespace zeroc_example
 {
-	namespace zeroc
-	{
-		ZerocIceRemoteMessage::ZerocIceRemoteMessage(std::string id, IceInternal::ProxyHandle<IceProxy::zerocexample::MessageIce> proxy_handle) 
-			:id_(id), proxy_handle_(proxy_handle) {}
+namespace zeroc
+{
+ZerocIceRemoteMessage::ZerocIceRemoteMessage(std::string id, IceInternal::ProxyHandle<IceProxy::zerocexample::MessageIce> proxy_handle)
+	: id_(id), proxy_handle_(proxy_handle) {}
 
-		std::string ZerocIceRemoteMessage::content() const
-		{
-			return proxy_handle_->getContent();
-		}
-
-		void ZerocIceRemoteMessage::content(const std::string& text)
-		{
-			return proxy_handle_->setContent(text);
-		}
-
-		std::string ZerocIceRemoteMessage::id() const
-		{
-			return id_;
-		}
-	}
+std::string ZerocIceRemoteMessage::content() const
+{
+	return proxy_handle_->getContent();
 }
 
+void ZerocIceRemoteMessage::content(const std::string& text)
+{
+	return proxy_handle_->setContent(text);
+}
+
+std::string ZerocIceRemoteMessage::id() const
+{
+	return id_;
+}
+}
+}
 

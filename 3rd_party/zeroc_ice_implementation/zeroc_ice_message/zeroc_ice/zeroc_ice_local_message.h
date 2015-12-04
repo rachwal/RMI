@@ -12,26 +12,26 @@
 
 namespace zeroc_example
 {
-	namespace zeroc
-	{
-		class ZerocIceLocalMessage :public rmi::message::Message, public zerocexample::MessageIce
-		{
-		public:
-			explicit ZerocIceLocalMessage(std::string id);
+namespace zeroc
+{
+class ZerocIceLocalMessage :public rmi::message::Message, public zerocexample::MessageIce
+{
+	public:
+	explicit ZerocIceLocalMessage(std::string id);
 
-			virtual std::string content() const override;
-			virtual void content(const std::string& text) override;
+	virtual std::string content() const override;
+	virtual void content(const std::string& text) override;
 
-			std::string id() const override;
+	std::string id() const override;
 
-			std::string getContent(const ::Ice::Current&) override;
-			void setContent(const ::std::string&, const ::Ice::Current&) override;
+	std::string getContent(const ::Ice::Current&) override;
+	void setContent(const ::std::string&, const ::Ice::Current&) override;
 
-		private:
-			std::string content_;
-			std::string id_;
-		};
-	}
+	private:
+	std::string content_;
+	std::string id_;
+};
+}
 }
 
 #endif

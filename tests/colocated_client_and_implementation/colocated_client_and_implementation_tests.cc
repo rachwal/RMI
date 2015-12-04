@@ -23,10 +23,10 @@ TEST_CLASS(ColocatedClientAndImplementationTests)
 	{
 		InitializeIce();
 		InitializeOrb();
-		
-		Logger::WriteMessage("Initialise the ORB.");	
+
+		Logger::WriteMessage("Initialise the ORB.");
 	}
-	
+
 	TEST_CLASS_CLEANUP(ClassCleanup)
 	{
 		adapter_->destroy();
@@ -34,29 +34,29 @@ TEST_CLASS(ColocatedClientAndImplementationTests)
 
 		Logger::WriteMessage("Clean up all the resources.");
 	}
-	
+
 	TEST_METHOD(ShouldExchangeIformatinoBetweenLocalAndRemoteMessagesByMessageServiceOverOmniOrb)
 	{
 		//GIVEN
 		std::string expected_first_content_check = "first message";
 		std::string expected_second_context_check = "second message";
-	
+
 		auto omni_orb_message_service = new OmniOrbMessageService(&orb_);
 		omni_orb_message_service->Activate();
 		omni_orb_message_service->SetContext("test", "example");
-	
+
 		MessageService* message_service = omni_orb_message_service;
-	
+
 		//WHEN		
 		Message* local_message = message_service->Create("message_01");
 		local_message->content("first message");
-	
+
 		Message* remote_message = message_service->Retrieve("message_01");
 		auto first_content_check = remote_message->content();
-	
+
 		remote_message->content("second message");
 		auto second_context_check = local_message->content();
-	
+
 		//THEN
 		Assert::AreEqual(expected_first_content_check, first_content_check);
 		Assert::AreEqual(expected_second_context_check, second_context_check);
@@ -69,19 +69,19 @@ TEST_CLASS(ColocatedClientAndImplementationTests)
 		//GIVEN
 		std::string expected_first_content_check = "first message";
 		std::string expected_second_context_check = "second message";
-	
-		MessageService* message_service  = new zeroc_example::zeroc::ZerocIceMessageService(&adapter_);
-	
+
+		MessageService* message_service = new zeroc_example::zeroc::ZerocIceMessageService(&adapter_);
+
 		//WHEN		
 		Message* local_message = message_service->Create("message_01");
 		local_message->content("first message");
-	
+
 		Message* remote_message = message_service->Retrieve("message_01");
 		auto first_content_check = remote_message->content();
-	
+
 		remote_message->content("second message");
 		auto second_context_check = local_message->content();
-	
+
 		//THEN
 		Assert::AreEqual(expected_first_content_check, first_content_check);
 		Assert::AreEqual(expected_second_context_check, second_context_check);
@@ -117,11 +117,11 @@ TEST_CLASS(ColocatedClientAndImplementationTests)
 		delete advertisement;
 	}
 
-private:
+	private:
 	static void InitializeOrb()
 	{
 		auto argc = 2;
-		char* argv[] = { "-ORBInitRef", "NameService=corbaloc:iiop:localhost:2809/NameService" };
+		char* argv[] = {"-ORBInitRef", "NameService=corbaloc:iiop:localhost:2809/NameService"};
 
 		orb_ = CORBA::ORB_init(argc, argv);
 		CORBA::Object_var obj = orb_->resolve_initial_references("RootPOA");
@@ -130,10 +130,11 @@ private:
 		PortableServer::POAManager_var poa_manager = poa->the_POAManager();
 		poa_manager->activate();
 	};
+
 	static void InitializeIce()
 	{
 		auto argc = 0;
-		char* argv[] = { "" };
+		char* argv[] = {""};
 
 		Ice::InitializationData initData;
 		initData.properties = Ice::createProperties();
@@ -152,6 +153,7 @@ private:
 	static Ice::ObjectAdapterPtr adapter_;
 	static CORBA::ORB_var orb_;
 };
+
 Ice::ObjectAdapterPtr ColocatedClientAndImplementationTests::adapter_;
 CORBA::ORB_var ColocatedClientAndImplementationTests::orb_;
 }

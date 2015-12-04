@@ -43,71 +43,70 @@
 
 namespace
 {
-
 const ::std::string __zerocexample__MessageIce__getContent_name = "getContent";
 
 const ::std::string __zerocexample__MessageIce__setContent_name = "setContent";
-
-}
-::IceProxy::Ice::Object* ::IceProxy::zerocexample::upCast(::IceProxy::zerocexample::MessageIce* p) { return p; }
-
-void
-::IceProxy::zerocexample::__read(::IceInternal::BasicStream* __is, ::IceInternal::ProxyHandle< ::IceProxy::zerocexample::MessageIce>& v)
-{
-    ::Ice::ObjectPrx proxy;
-    __is->read(proxy);
-    if(!proxy)
-    {
-        v = 0;
-    }
-    else
-    {
-        v = new ::IceProxy::zerocexample::MessageIce;
-        v->__copyFrom(proxy);
-    }
 }
 
-::std::string
-IceProxy::zerocexample::MessageIce::getContent(const ::Ice::Context* __ctx)
+::IceProxy::Ice::Object *::IceProxy::zerocexample::upCast(::IceProxy::zerocexample::MessageIce* p)
 {
-    __checkTwowayOnly(__zerocexample__MessageIce__getContent_name);
-    ::IceInternal::Outgoing __og(this, __zerocexample__MessageIce__getContent_name, ::Ice::Idempotent, __ctx);
-    __og.writeEmptyParams();
-    if(!__og.invoke())
-    {
-        try
-        {
-            __og.throwUserException();
-        }
-        catch(const ::Ice::UserException& __ex)
-        {
-            ::Ice::UnknownUserException __uue(__FILE__, __LINE__, __ex.ice_name());
-            throw __uue;
-        }
-    }
-    ::std::string __ret;
-    ::IceInternal::BasicStream* __is = __og.startReadParams();
-    __is->read(__ret);
-    __og.endReadParams();
-    return __ret;
+	return p;
 }
 
-::Ice::AsyncResultPtr
-IceProxy::zerocexample::MessageIce::begin_getContent(const ::Ice::Context* __ctx, const ::IceInternal::CallbackBasePtr& __del, const ::Ice::LocalObjectPtr& __cookie)
+void ::IceProxy::zerocexample::__read(::IceInternal::BasicStream* __is, ::IceInternal::ProxyHandle<::IceProxy::zerocexample::MessageIce>& v)
 {
-    __checkAsyncTwowayOnly(__zerocexample__MessageIce__getContent_name);
-    ::IceInternal::OutgoingAsyncPtr __result = new ::IceInternal::OutgoingAsync(this, __zerocexample__MessageIce__getContent_name, __del, __cookie);
-    try
-    {
-        __result->prepare(__zerocexample__MessageIce__getContent_name, ::Ice::Idempotent, __ctx);
-        __result->writeEmptyParams();
-        __result->invoke();
-    }
-    catch(const ::Ice::Exception& __ex)
-    {
-        __result->abort(__ex);
-    }
-    return __result;
+	::Ice::ObjectPrx proxy;
+	__is->read(proxy);
+	if (!proxy)
+	{
+		v = 0;
+	}
+	else
+	{
+		v = new ::IceProxy::zerocexample::MessageIce;
+		v->__copyFrom(proxy);
+	}
+}
+
+::std::string IceProxy::zerocexample::MessageIce::getContent(const ::Ice::Context* __ctx)
+{
+	__checkTwowayOnly(__zerocexample__MessageIce__getContent_name);
+	::IceInternal::Outgoing __og(this, __zerocexample__MessageIce__getContent_name, ::Ice::Idempotent, __ctx);
+	__og.writeEmptyParams();
+	if (!__og.invoke())
+	{
+		try
+		{
+			__og.throwUserException();
+		}
+		catch (const ::Ice::UserException& __ex)
+		{
+			::Ice::UnknownUserException __uue(__FILE__, __LINE__, __ex.ice_name());
+			throw __uue;
+		}
+	}
+	::std::string __ret;
+	::IceInternal::BasicStream* __is = __og.startReadParams();
+	__is->read(__ret);
+	__og.endReadParams();
+	return __ret;
+}
+
+::Ice::AsyncResultPtr IceProxy::zerocexample::MessageIce::begin_getContent(const ::Ice::Context* __ctx, const ::IceInternal::CallbackBasePtr& __del, const ::Ice::LocalObjectPtr& __cookie)
+{
+	__checkAsyncTwowayOnly(__zerocexample__MessageIce__getContent_name);
+	::IceInternal::OutgoingAsyncPtr __result = new ::IceInternal::OutgoingAsync(this, __zerocexample__MessageIce__getContent_name, __del, __cookie);
+	try
+	{
+		__result->prepare(__zerocexample__MessageIce__getContent_name, ::Ice::Idempotent, __ctx);
+		__result->writeEmptyParams();
+		__result->invoke();
+	}
+	catch (const ::Ice::Exception& __ex)
+	{
+		__result->abort(__ex);
+	}
+	return __result;
 }
 
 #ifdef ICE_CPP11
@@ -153,223 +152,209 @@ IceProxy::zerocexample::MessageIce::__begin_getContent(const ::Ice::Context* __c
 }
 #endif
 
-::std::string
-IceProxy::zerocexample::MessageIce::end_getContent(const ::Ice::AsyncResultPtr& __result)
+::std::string IceProxy::zerocexample::MessageIce::end_getContent(const ::Ice::AsyncResultPtr& __result)
 {
-    ::Ice::AsyncResult::__check(__result, this, __zerocexample__MessageIce__getContent_name);
-    ::std::string __ret;
-    if(!__result->__wait())
-    {
-        try
-        {
-            __result->__throwUserException();
-        }
-        catch(const ::Ice::UserException& __ex)
-        {
-            throw ::Ice::UnknownUserException(__FILE__, __LINE__, __ex.ice_name());
-        }
-    }
-    ::IceInternal::BasicStream* __is = __result->__startReadParams();
-    __is->read(__ret);
-    __result->__endReadParams();
-    return __ret;
+	::Ice::AsyncResult::__check(__result, this, __zerocexample__MessageIce__getContent_name);
+	::std::string __ret;
+	if (!__result->__wait())
+	{
+		try
+		{
+			__result->__throwUserException();
+		}
+		catch (const ::Ice::UserException& __ex)
+		{
+			throw ::Ice::UnknownUserException(__FILE__, __LINE__, __ex.ice_name());
+		}
+	}
+	::IceInternal::BasicStream* __is = __result->__startReadParams();
+	__is->read(__ret);
+	__result->__endReadParams();
+	return __ret;
 }
 
-void
-IceProxy::zerocexample::MessageIce::setContent(const ::std::string& __p_text, const ::Ice::Context* __ctx)
+void IceProxy::zerocexample::MessageIce::setContent(const ::std::string& __p_text, const ::Ice::Context* __ctx)
 {
-    ::IceInternal::Outgoing __og(this, __zerocexample__MessageIce__setContent_name, ::Ice::Normal, __ctx);
-    try
-    {
-        ::IceInternal::BasicStream* __os = __og.startWriteParams(::Ice::DefaultFormat);
-        __os->write(__p_text);
-        __og.endWriteParams();
-    }
-    catch(const ::Ice::LocalException& __ex)
-    {
-        __og.abort(__ex);
-    }
-    __invoke(__og);
+	::IceInternal::Outgoing __og(this, __zerocexample__MessageIce__setContent_name, ::Ice::Normal, __ctx);
+	try
+	{
+		::IceInternal::BasicStream* __os = __og.startWriteParams(::Ice::DefaultFormat);
+		__os->write(__p_text);
+		__og.endWriteParams();
+	}
+	catch (const ::Ice::LocalException& __ex)
+	{
+		__og.abort(__ex);
+	}
+	__invoke(__og);
 }
 
-::Ice::AsyncResultPtr
-IceProxy::zerocexample::MessageIce::begin_setContent(const ::std::string& __p_text, const ::Ice::Context* __ctx, const ::IceInternal::CallbackBasePtr& __del, const ::Ice::LocalObjectPtr& __cookie)
+::Ice::AsyncResultPtr IceProxy::zerocexample::MessageIce::begin_setContent(const ::std::string& __p_text, const ::Ice::Context* __ctx, const ::IceInternal::CallbackBasePtr& __del, const ::Ice::LocalObjectPtr& __cookie)
 {
-    ::IceInternal::OutgoingAsyncPtr __result = new ::IceInternal::OutgoingAsync(this, __zerocexample__MessageIce__setContent_name, __del, __cookie);
-    try
-    {
-        __result->prepare(__zerocexample__MessageIce__setContent_name, ::Ice::Normal, __ctx);
-        ::IceInternal::BasicStream* __os = __result->startWriteParams(::Ice::DefaultFormat);
-        __os->write(__p_text);
-        __result->endWriteParams();
-        __result->invoke();
-    }
-    catch(const ::Ice::Exception& __ex)
-    {
-        __result->abort(__ex);
-    }
-    return __result;
+	::IceInternal::OutgoingAsyncPtr __result = new ::IceInternal::OutgoingAsync(this, __zerocexample__MessageIce__setContent_name, __del, __cookie);
+	try
+	{
+		__result->prepare(__zerocexample__MessageIce__setContent_name, ::Ice::Normal, __ctx);
+		::IceInternal::BasicStream* __os = __result->startWriteParams(::Ice::DefaultFormat);
+		__os->write(__p_text);
+		__result->endWriteParams();
+		__result->invoke();
+	}
+	catch (const ::Ice::Exception& __ex)
+	{
+		__result->abort(__ex);
+	}
+	return __result;
 }
 
-void
-IceProxy::zerocexample::MessageIce::end_setContent(const ::Ice::AsyncResultPtr& __result)
+void IceProxy::zerocexample::MessageIce::end_setContent(const ::Ice::AsyncResultPtr& __result)
 {
-    __end(__result, __zerocexample__MessageIce__setContent_name);
+	__end(__result, __zerocexample__MessageIce__setContent_name);
 }
 
-const ::std::string&
-IceProxy::zerocexample::MessageIce::ice_staticId()
+const ::std::string &IceProxy::zerocexample::MessageIce::ice_staticId()
 {
-    return ::zerocexample::MessageIce::ice_staticId();
+	return ::zerocexample::MessageIce::ice_staticId();
 }
 
-::IceProxy::Ice::Object*
-IceProxy::zerocexample::MessageIce::__newInstance() const
+::IceProxy::Ice::Object *IceProxy::zerocexample::MessageIce::__newInstance() const
 {
-    return new MessageIce;
+	return new MessageIce;
 }
 
-::Ice::Object* zerocexample::upCast(::zerocexample::MessageIce* p) { return p; }
+::Ice::Object *zerocexample::upCast(::zerocexample::MessageIce* p)
+{
+	return p;
+}
 
 namespace
 {
 const ::std::string __zerocexample__MessageIce_ids[2] =
 {
-    "::Ice::Object",
-    "::zerocexample::MessageIce"
+	"::Ice::Object",
+	"::zerocexample::MessageIce"
 };
-
 }
 
-bool
-zerocexample::MessageIce::ice_isA(const ::std::string& _s, const ::Ice::Current&) const
+bool zerocexample::MessageIce::ice_isA(const ::std::string& _s, const ::Ice::Current&) const
 {
-    return ::std::binary_search(__zerocexample__MessageIce_ids, __zerocexample__MessageIce_ids + 2, _s);
+	return ::std::binary_search(__zerocexample__MessageIce_ids, __zerocexample__MessageIce_ids + 2, _s);
 }
 
-::std::vector< ::std::string>
-zerocexample::MessageIce::ice_ids(const ::Ice::Current&) const
+::std::vector<::std::string> zerocexample::MessageIce::ice_ids(const ::Ice::Current&) const
 {
-    return ::std::vector< ::std::string>(&__zerocexample__MessageIce_ids[0], &__zerocexample__MessageIce_ids[2]);
+	return ::std::vector<::std::string>(&__zerocexample__MessageIce_ids[0], &__zerocexample__MessageIce_ids[2]);
 }
 
-const ::std::string&
-zerocexample::MessageIce::ice_id(const ::Ice::Current&) const
+const ::std::string &zerocexample::MessageIce::ice_id(const ::Ice::Current&) const
 {
-    return __zerocexample__MessageIce_ids[1];
+	return __zerocexample__MessageIce_ids[1];
 }
 
-const ::std::string&
-zerocexample::MessageIce::ice_staticId()
+const ::std::string &zerocexample::MessageIce::ice_staticId()
 {
 #ifdef ICE_HAS_THREAD_SAFE_LOCAL_STATIC
     static const ::std::string typeId = "::zerocexample::MessageIce";
     return typeId;
 #else
-    return __zerocexample__MessageIce_ids[1];
+	return __zerocexample__MessageIce_ids[1];
 #endif
 }
 
-::Ice::DispatchStatus
-zerocexample::MessageIce::___getContent(::IceInternal::Incoming& __inS, const ::Ice::Current& __current)
+::Ice::DispatchStatus zerocexample::MessageIce::___getContent(::IceInternal::Incoming& __inS, const ::Ice::Current& __current)
 {
-    __checkMode(::Ice::Idempotent, __current.mode);
-    __inS.readEmptyParams();
-    ::std::string __ret = getContent(__current);
-    ::IceInternal::BasicStream* __os = __inS.__startWriteParams(::Ice::DefaultFormat);
-    __os->write(__ret);
-    __inS.__endWriteParams(true);
-    return ::Ice::DispatchOK;
+	__checkMode(::Ice::Idempotent, __current.mode);
+	__inS.readEmptyParams();
+	::std::string __ret = getContent(__current);
+	::IceInternal::BasicStream* __os = __inS.__startWriteParams(::Ice::DefaultFormat);
+	__os->write(__ret);
+	__inS.__endWriteParams(true);
+	return ::Ice::DispatchOK;
 }
 
-::Ice::DispatchStatus
-zerocexample::MessageIce::___setContent(::IceInternal::Incoming& __inS, const ::Ice::Current& __current)
+::Ice::DispatchStatus zerocexample::MessageIce::___setContent(::IceInternal::Incoming& __inS, const ::Ice::Current& __current)
 {
-    __checkMode(::Ice::Normal, __current.mode);
-    ::IceInternal::BasicStream* __is = __inS.startReadParams();
-    ::std::string __p_text;
-    __is->read(__p_text);
-    __inS.endReadParams();
-    setContent(__p_text, __current);
-    __inS.__writeEmptyParams();
-    return ::Ice::DispatchOK;
+	__checkMode(::Ice::Normal, __current.mode);
+	::IceInternal::BasicStream* __is = __inS.startReadParams();
+	::std::string __p_text;
+	__is->read(__p_text);
+	__inS.endReadParams();
+	setContent(__p_text, __current);
+	__inS.__writeEmptyParams();
+	return ::Ice::DispatchOK;
 }
 
 namespace
 {
 const ::std::string __zerocexample__MessageIce_all[] =
 {
-    "getContent",
-    "ice_id",
-    "ice_ids",
-    "ice_isA",
-    "ice_ping",
-    "setContent"
+	"getContent",
+	"ice_id",
+	"ice_ids",
+	"ice_isA",
+	"ice_ping",
+	"setContent"
 };
-
 }
 
-::Ice::DispatchStatus
-zerocexample::MessageIce::__dispatch(::IceInternal::Incoming& in, const ::Ice::Current& current)
+::Ice::DispatchStatus zerocexample::MessageIce::__dispatch(::IceInternal::Incoming& in, const ::Ice::Current& current)
 {
-    ::std::pair< const ::std::string*, const ::std::string*> r = ::std::equal_range(__zerocexample__MessageIce_all, __zerocexample__MessageIce_all + 6, current.operation);
-    if(r.first == r.second)
-    {
-        throw ::Ice::OperationNotExistException(__FILE__, __LINE__, current.id, current.facet, current.operation);
-    }
+	::std::pair<const ::std::string*, const ::std::string*> r = ::std::equal_range(__zerocexample__MessageIce_all, __zerocexample__MessageIce_all + 6, current.operation);
+	if (r.first == r.second)
+	{
+		throw ::Ice::OperationNotExistException(__FILE__, __LINE__, current.id, current.facet, current.operation);
+	}
 
-    switch(r.first - __zerocexample__MessageIce_all)
-    {
-        case 0:
-        {
-            return ___getContent(in, current);
-        }
-        case 1:
-        {
-            return ___ice_id(in, current);
-        }
-        case 2:
-        {
-            return ___ice_ids(in, current);
-        }
-        case 3:
-        {
-            return ___ice_isA(in, current);
-        }
-        case 4:
-        {
-            return ___ice_ping(in, current);
-        }
-        case 5:
-        {
-            return ___setContent(in, current);
-        }
-    }
+	switch (r.first - __zerocexample__MessageIce_all)
+	{
+		case 0:
+			{
+				return ___getContent(in, current);
+			}
+		case 1:
+			{
+				return ___ice_id(in, current);
+			}
+		case 2:
+			{
+				return ___ice_ids(in, current);
+			}
+		case 3:
+			{
+				return ___ice_isA(in, current);
+			}
+		case 4:
+			{
+				return ___ice_ping(in, current);
+			}
+		case 5:
+			{
+				return ___setContent(in, current);
+			}
+	}
 
-    assert(false);
-    throw ::Ice::OperationNotExistException(__FILE__, __LINE__, current.id, current.facet, current.operation);
+	assert(false);
+	throw ::Ice::OperationNotExistException(__FILE__, __LINE__, current.id, current.facet, current.operation);
 }
 
-void
-zerocexample::MessageIce::__writeImpl(::IceInternal::BasicStream* __os) const
+void zerocexample::MessageIce::__writeImpl(::IceInternal::BasicStream* __os) const
 {
-    __os->startWriteSlice(ice_staticId(), -1, true);
-    __os->endWriteSlice();
+	__os->startWriteSlice(ice_staticId(), -1, true);
+	__os->endWriteSlice();
 }
 
-void
-zerocexample::MessageIce::__readImpl(::IceInternal::BasicStream* __is)
+void zerocexample::MessageIce::__readImpl(::IceInternal::BasicStream* __is)
 {
-    __is->startReadSlice();
-    __is->endReadSlice();
+	__is->startReadSlice();
+	__is->endReadSlice();
 }
 
-void 
-zerocexample::__patch(MessageIcePtr& handle, const ::Ice::ObjectPtr& v)
+void zerocexample::__patch(MessageIcePtr& handle, const ::Ice::ObjectPtr& v)
 {
-    handle = ::zerocexample::MessageIcePtr::dynamicCast(v);
-    if(v && !handle)
-    {
-        IceInternal::Ex::throwUOE(::zerocexample::MessageIce::ice_staticId(), v);
-    }
+	handle = ::zerocexample::MessageIcePtr::dynamicCast(v);
+	if (v && !handle)
+	{
+		IceInternal::Ex::throwUOE(::zerocexample::MessageIce::ice_staticId(), v);
+	}
 }
+
