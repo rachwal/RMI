@@ -21,10 +21,10 @@ TEST_CLASS(ColocatedClientAndImplementationTests)
 {
 	TEST_CLASS_INITIALIZE(ClassInitialize)
 	{
+		Logger::WriteMessage("Start");
+		
 		InitializeIce();
 		InitializeOrb();
-
-		Logger::WriteMessage("Initialise the ORB.");
 	}
 
 	TEST_CLASS_CLEANUP(ClassCleanup)
@@ -32,7 +32,7 @@ TEST_CLASS(ColocatedClientAndImplementationTests)
 		adapter_->destroy();
 		orb_->destroy();
 
-		Logger::WriteMessage("Clean up all the resources.");
+		Logger::WriteMessage("End");
 	}
 
 	TEST_METHOD(ShouldExchangeIformatinoBetweenLocalAndRemoteMessagesByMessageServiceOverOmniOrb)
