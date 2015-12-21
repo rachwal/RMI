@@ -206,8 +206,8 @@
   <ImportGroup Label="ExtensionTargets">
     <Import Project="..\..\packages\omniorb_rt_aist.redist.1.0.0\build\native\omniorb_rt_aist.redist.targets" Condition="Exists('..\..\packages\omniorb_rt_aist.redist.1.0.0\build\native\omniorb_rt_aist.redist.targets')" />
     <Import Project="..\..\packages\omniorb_rt_aist.1.0.0\build\native\omniorb_rt_aist.targets" Condition="Exists('..\..\packages\omniorb_rt_aist.1.0.0\build\native\omniorb_rt_aist.targets')" />
-    <Import Project="..\..\packages\zeroc_ice_core_aist.redist.1.0.2\build\native\zeroc_ice_core_aist.redist.targets" Condition="Exists('..\..\packages\zeroc_ice_core_aist.redist.1.0.2\build\native\zeroc_ice_core_aist.redist.targets')" />
-    <Import Project="..\..\packages\zeroc_ice_core_aist.1.0.2\build\native\zeroc_ice_core_aist.targets" Condition="Exists('..\..\packages\zeroc_ice_core_aist.1.0.2\build\native\zeroc_ice_core_aist.targets')" />
+    <Import Project="..\..\packages\zeroc_ice_core_aist.redist.1.0.3\build\native\zeroc_ice_core_aist.redist.targets" Condition="Exists('..\..\packages\zeroc_ice_core_aist.redist.1.0.3\build\native\zeroc_ice_core_aist.redist.targets')" />
+    <Import Project="..\..\packages\zeroc_ice_core_aist.1.0.3\build\native\zeroc_ice_core_aist.targets" Condition="Exists('..\..\packages\zeroc_ice_core_aist.1.0.3\build\native\zeroc_ice_core_aist.targets')" />
   </ImportGroup>
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
@@ -215,7 +215,7 @@
     </PropertyGroup>
     <Error Condition="!Exists('..\..\packages\omniorb_rt_aist.redist.1.0.0\build\native\omniorb_rt_aist.redist.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\omniorb_rt_aist.redist.1.0.0\build\native\omniorb_rt_aist.redist.targets'))" />
     <Error Condition="!Exists('..\..\packages\omniorb_rt_aist.1.0.0\build\native\omniorb_rt_aist.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\omniorb_rt_aist.1.0.0\build\native\omniorb_rt_aist.targets'))" />
-    <Error Condition="!Exists('..\..\packages\zeroc_ice_core_aist.redist.1.0.2\build\native\zeroc_ice_core_aist.redist.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\zeroc_ice_core_aist.redist.1.0.2\build\native\zeroc_ice_core_aist.redist.targets'))" />
-    <Error Condition="!Exists('..\..\packages\zeroc_ice_core_aist.1.0.2\build\native\zeroc_ice_core_aist.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\zeroc_ice_core_aist.1.0.2\build\native\zeroc_ice_core_aist.targets'))" />
+    <Error Condition="!Exists('..\..\packages\zeroc_ice_core_aist.redist.1.0.3\build\native\zeroc_ice_core_aist.redist.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\zeroc_ice_core_aist.redist.1.0.3\build\native\zeroc_ice_core_aist.redist.targets'))" />
+    <Error Condition="!Exists('..\..\packages\zeroc_ice_core_aist.1.0.3\build\native\zeroc_ice_core_aist.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\zeroc_ice_core_aist.1.0.3\build\native\zeroc_ice_core_aist.targets'))" />
   </Target>
 </Project>

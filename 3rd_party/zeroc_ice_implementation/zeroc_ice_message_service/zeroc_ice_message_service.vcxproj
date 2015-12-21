@@ -132,14 +132,14 @@
   </ItemDefinitionGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
-    <Import Project="..\..\..\packages\zeroc_ice_core_aist.redist.1.0.2\build\native\zeroc_ice_core_aist.redist.targets" Condition="Exists('..\..\..\packages\zeroc_ice_core_aist.redist.1.0.2\build\native\zeroc_ice_core_aist.redist.targets')" />
-    <Import Project="..\..\..\packages\zeroc_ice_core_aist.1.0.2\build\native\zeroc_ice_core_aist.targets" Condition="Exists('..\..\..\packages\zeroc_ice_core_aist.1.0.2\build\native\zeroc_ice_core_aist.targets')" />
+    <Import Project="..\..\..\packages\zeroc_ice_core_aist.redist.1.0.3\build\native\zeroc_ice_core_aist.redist.targets" Condition="Exists('..\..\..\packages\zeroc_ice_core_aist.redist.1.0.3\build\native\zeroc_ice_core_aist.redist.targets')" />
+    <Import Project="..\..\..\packages\zeroc_ice_core_aist.1.0.3\build\native\zeroc_ice_core_aist.targets" Condition="Exists('..\..\..\packages\zeroc_ice_core_aist.1.0.3\build\native\zeroc_ice_core_aist.targets')" />
   </ImportGroup>
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
-    <Error Condition="!Exists('..\..\..\packages\zeroc_ice_core_aist.redist.1.0.2\build\native\zeroc_ice_core_aist.redist.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\..\packages\zeroc_ice_core_aist.redist.1.0.2\build\native\zeroc_ice_core_aist.redist.targets'))" />
-    <Error Condition="!Exists('..\..\..\packages\zeroc_ice_core_aist.1.0.2\build\native\zeroc_ice_core_aist.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\..\packages\zeroc_ice_core_aist.1.0.2\build\native\zeroc_ice_core_aist.targets'))" />
+    <Error Condition="!Exists('..\..\..\packages\zeroc_ice_core_aist.redist.1.0.3\build\native\zeroc_ice_core_aist.redist.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\..\packages\zeroc_ice_core_aist.redist.1.0.3\build\native\zeroc_ice_core_aist.redist.targets'))" />
+    <Error Condition="!Exists('..\..\..\packages\zeroc_ice_core_aist.1.0.3\build\native\zeroc_ice_core_aist.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\..\packages\zeroc_ice_core_aist.1.0.3\build\native\zeroc_ice_core_aist.targets'))" />
   </Target>
 </Project>
