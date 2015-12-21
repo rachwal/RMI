@@ -12,7 +12,7 @@ namespace zeroc
 {
 ZerocIceMessageService::ZerocIceMessageService(Ice::ObjectAdapterPtr* adapter) : adapter_(adapter) {}
 
-rmi::message::Message *ZerocIceMessageService::Create(std::string id) const
+rmi::message::Message *ZerocIceMessageService::Create(const std::string& id) const
 {
 	zerocexample::MessageIcePtr local_message_ptr = new ZerocIceLocalMessage(id);
 
@@ -22,7 +22,7 @@ rmi::message::Message *ZerocIceMessageService::Create(std::string id) const
 	return message;
 }
 
-rmi::message::Message *ZerocIceMessageService::Retrieve(std::string id) const
+rmi::message::Message *ZerocIceMessageService::Retrieve(const std::string& id) const
 {
 	std::ostringstream proxy;
 	proxy << id << ":tcp -p 10000:udp -p 10001";
@@ -33,9 +33,9 @@ rmi::message::Message *ZerocIceMessageService::Retrieve(std::string id) const
 	return message;
 }
 
-void ZerocIceMessageService::Update(std::string id, rmi::message::Message* message) const {}
+void ZerocIceMessageService::Update(const std::string& id, rmi::message::Message* message) const {}
 
-void ZerocIceMessageService::Destroy(std::string id) const {}
+void ZerocIceMessageService::Destroy(const std::string& id) const {}
 }
 }
 

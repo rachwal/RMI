@@ -15,7 +15,7 @@ namespace omniorb
 class OmniOrbRemoteMessage :public rmi::message::Message
 {
 	public:
-	OmniOrbRemoteMessage(std::string id, CORBA::ORB_var* orb);
+	OmniOrbRemoteMessage(const std::string& id, CORBA::ORB_var* orb);
 
 	virtual std::string content() const override;
 	virtual void content(const std::string& text) override;

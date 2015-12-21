@@ -15,10 +15,10 @@ class MessageService
 	public:
 	virtual ~MessageService() { }
 
-	virtual Message *Create(std::string id) const = 0;
-	virtual Message *Retrieve(std::string id) const = 0;
-	virtual void Update(std::string id, Message* message) const = 0;
-	virtual void Destroy(std::string id) const = 0;
+	virtual Message *Create(const std::string& id) const = 0;
+	virtual Message *Retrieve(const std::string& id) const = 0;
+	virtual void Update(const std::string& id, Message* message) const = 0;
+	virtual void Destroy(const std::string& id) const = 0;
 };
 }
 }

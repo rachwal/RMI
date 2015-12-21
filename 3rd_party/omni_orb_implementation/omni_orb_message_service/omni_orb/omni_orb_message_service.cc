@@ -9,7 +9,7 @@ namespace omniorb
 {
 OmniOrbMessageService::OmniOrbMessageService(CORBA::ORB_var* orb) : orb_(orb) { }
 
-OmniOrbLocalMessage *OmniOrbMessageService::Create(std::string id) const
+OmniOrbLocalMessage *OmniOrbMessageService::Create(const std::string& id) const
 {
 	OmniOrbLocalMessage* message = nullptr;
 	try
@@ -36,7 +36,7 @@ OmniOrbLocalMessage *OmniOrbMessageService::Create(std::string id) const
 	}
 }
 
-OmniOrbRemoteMessage *OmniOrbMessageService::Retrieve(std::string id) const
+OmniOrbRemoteMessage *OmniOrbMessageService::Retrieve(const std::string& id) const
 {
 	CORBA::Object_var context_ptr = root_context_->resolve(context_name_);
 	auto context = CosNaming::NamingContext::_narrow(context_ptr);
@@ -63,11 +63,11 @@ OmniOrbRemoteMessage *OmniOrbMessageService::Retrieve(std::string id) const
 	}
 }
 
-void OmniOrbMessageService::Update(std::string id, rmi::message::Message* message) const { }
+void OmniOrbMessageService::Update(const std::string& id, rmi::message::Message* message) const { }
 
-void OmniOrbMessageService::Destroy(std::string id) const { }
+void OmniOrbMessageService::Destroy(const std::string& id) const { }
 
-void OmniOrbMessageService::SetContext(std::string id, std::string kind)
+void OmniOrbMessageService::SetContext(const std::string& id, const std::string& kind)
 {
 	context_name_ = CosNaming::Name();
 	context_name_.length(1);

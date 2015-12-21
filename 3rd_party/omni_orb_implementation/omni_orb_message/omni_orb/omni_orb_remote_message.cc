@@ -7,7 +7,7 @@ namespace omniorb_example
 {
 namespace omniorb
 {
-OmniOrbRemoteMessage::OmniOrbRemoteMessage(std::string id, CORBA::ORB_var* orb) : message_idl_ptr_(nullptr), orb_(orb), id_(id) { }
+OmniOrbRemoteMessage::OmniOrbRemoteMessage(const std::string& id, CORBA::ORB_var* orb) : message_idl_ptr_(nullptr), orb_(orb), id_(id) { }
 
 std::string OmniOrbRemoteMessage::content() const
 {

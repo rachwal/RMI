@@ -17,7 +17,7 @@ namespace zeroc
 class ZerocIceRemoteMessage :public rmi::message::Message
 {
 	public:
-	explicit ZerocIceRemoteMessage(std::string id, IceInternal::ProxyHandle<IceProxy::zerocexample::MessageIce> proxy_handle);
+	explicit ZerocIceRemoteMessage(const std::string& id, IceInternal::ProxyHandle<IceProxy::zerocexample::MessageIce> proxy_handle);
 
 	virtual std::string content() const override;
 	virtual void content(const std::string& text) override;

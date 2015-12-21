@@ -20,12 +20,12 @@ class OmniOrbMessageService :public rmi::message::MessageService
 	public:
 	explicit OmniOrbMessageService(CORBA::ORB_var* orb);
 
-	virtual OmniOrbLocalMessage *Create(std::string id) const override;
-	virtual OmniOrbRemoteMessage *Retrieve(std::string id) const override;
-	virtual void Update(std::string id, rmi::message::Message* message) const override;
-	virtual void Destroy(std::string id) const override;
+	virtual OmniOrbLocalMessage *Create(const std::string& id) const override;
+	virtual OmniOrbRemoteMessage *Retrieve(const std::string& id) const override;
+	virtual void Update(const std::string& id, rmi::message::Message* message) const override;
+	virtual void Destroy(const std::string& id) const override;
 
-	void SetContext(std::string id, std::string kind);
+	void SetContext(const std::string& id, const std::string& kind);
 	bool Activate();
 
 	private:

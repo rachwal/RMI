@@ -17,7 +17,7 @@ namespace zeroc
 class ZerocIceLocalMessage :public rmi::message::Message, public zerocexample::MessageIce
 {
 	public:
-	explicit ZerocIceLocalMessage(std::string id);
+	explicit ZerocIceLocalMessage(const std::string& id);
 
 	virtual std::string content() const override;
 	virtual void content(const std::string& text) override;

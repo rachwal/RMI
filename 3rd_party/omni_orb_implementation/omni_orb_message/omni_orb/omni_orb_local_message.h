@@ -15,7 +15,7 @@ namespace omniorb
 class OmniOrbLocalMessage :public rmi::message::Message, public POA_MessageIdl, public PortableServer::RefCountServantBase
 {
 	public:
-	OmniOrbLocalMessage(std::string id, CORBA::ORB_var* orb);
+	OmniOrbLocalMessage(const std::string& id, CORBA::ORB_var* orb);
 
 	virtual std::string content() const override;
 	virtual void content(const std::string& text) override;

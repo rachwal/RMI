@@ -7,7 +7,7 @@ namespace zeroc_example
 {
 namespace zeroc
 {
-ZerocIceLocalMessage::ZerocIceLocalMessage(std::string id) : id_(id) {}
+ZerocIceLocalMessage::ZerocIceLocalMessage(const std::string& id) : id_(id) {}
 
 std::string ZerocIceLocalMessage::content() const
 {
